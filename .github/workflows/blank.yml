@@ -10,8 +10,10 @@ on:
       message:
         required: false
       Branch:
-        type: boolean
         required: true
+        type: choice
+        options:
+        - "SIM"
         description: Branch esta correta?
       Path:
         type: boolean
