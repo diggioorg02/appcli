@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       test_name:
-        description: 'sub Path do arquivo de teste. | ex: pix_load_testing/pix_payment_invoice.js | favor realizar um doublecheck'
+        description: 'Arquivo de teste ex: pix_load_testing/pix_payment_invoice.js | favor realizar um doublecheck'
         required: true
         type: string
 
