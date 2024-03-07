@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       test_name:
-        description: 'Caminho do arquivo sem o diretorio testes.k6/src ex:  Ex. pix_load_testing/pix_payment_invoice.js'
+        description: 'sub Path do arquivo de teste. | ex: pix_load_testing/pix_payment_invoice.js | favor realizar um doublecheck'
         required: true
         type: string
 
