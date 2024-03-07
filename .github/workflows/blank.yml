@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       test_name:
-        description: 'Arquivo de teste ex: pix_load_testing/pix_payment_invoice.js | favor realizar um doublecheck'
+        description: 'PATH do test ex: dir/test.js | *doublecheck'
         required: true
         type: string
 
