@@ -32,6 +32,7 @@ jobs:
 
       - name: The demo step has failed
         if: ${{ failure() && steps.testfile.conclusion == 'failure' }}
+        run: exit 0
 
         
           
