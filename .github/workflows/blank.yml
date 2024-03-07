@@ -28,7 +28,7 @@ jobs:
           fi
   trigger:
     needs: [ test-file-check ]
-    if: false
+    if: needs.test-file-check.result == 'failure' || false
     runs-on: ubuntu-latest
 
     steps:
