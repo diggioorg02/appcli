@@ -29,6 +29,16 @@ jobs:
               echo "$FILE dont exists."
               exit 1
           fi
+     
+      - name: Cancel build on failure
+        if: failure()
+        run: |-
+           curl \
+             -X POST \
+             -H "X-GitHub-Api-Version: 2022-11-28" \
+             -H "Accept: application/vnd.github.v3+json" \
+             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+             "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/runs/${{ github.run_id }}/cancel"
 
         
           
