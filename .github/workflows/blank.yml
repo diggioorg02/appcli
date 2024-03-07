@@ -10,14 +10,14 @@ on:
 
 jobs:
   test-file-check:
-    name: "testando se o arquivo ${{ inputs.test_name }} existe dentro de testes-k6/src/"
+    name: "${{ inputs.test_name }} testando se existe dentro de testes-k6/src/"
     
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: File check
+      - name: "File check ${{ inputs.test_name }}"
         id: testfile
         run: |
           FILE="${{ inputs.test_name }}"
@@ -25,11 +25,11 @@ jobs:
               echo "$FILE exists."
               exit 0
           else
-              echo "$FILE dont exists."
+              echo ""${{ inputs.test_name }} NÂO existe dentro de testes-k6/src/""
               exit 1
           fi
      
-      - name: Cancel build on failure
+      - name: "${{ inputs.test_name }} NÂO existe dentro de testes-k6/src/"
         if: failure()
         run: |-
            curl \
