@@ -17,10 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: "File check ${{ inputs.test_name }}"
-        id: testfile
+      - name: "${{ inputs.test_name }} NÂO existe dentro de testes-k6/src/"
         run: |
-          FILE="${{ inputs.test_name }}"
+          FILE="./testes-k6/src/${{ inputs.test_name }}"
           if [ -f "$FILE" ]; then
               echo "$FILE exists."
               exit 0
@@ -29,7 +28,7 @@ jobs:
               exit 1
           fi
      
-      - name: "${{ inputs.test_name }} NÂO existe dentro de testes-k6/src/"
+      - name: "para a execução se a task acima falhar"
         if: failure()
         run: |-
            curl \
