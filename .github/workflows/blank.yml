@@ -36,8 +36,8 @@ jobs:
              -X POST \
              -H "X-GitHub-Api-Version: 2022-11-28" \
              -H "Accept: application/vnd.github.v3+json" \
-             -H "Authorization: Bearer ${{ secrets.PAT }}" \
-             "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/runs/${{ github.run_id }}/cancel"
+             -H "Authorization: Bearer ${{ secrets.SEFLTOKEN }}" \
+             "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/runs/${{ github.run_id }}/cancel" && sleep 15
 
         
           
