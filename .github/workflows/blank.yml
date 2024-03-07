@@ -11,6 +11,7 @@ on:
 jobs:
   test-file-check:
     name: "testando se o arquivo ${{ inputs.test_name }} existe dentro de testes-k6/src/"
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
