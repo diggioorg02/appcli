@@ -1,8 +1,9 @@
 name: Trigger Target Workflow
 
 on:
-  push:
   workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   trigger:
