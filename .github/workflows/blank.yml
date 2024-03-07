@@ -11,13 +11,15 @@ on:
 jobs:
   test-file-check:
     name: "testando se o arquivo ${{ inputs.test_name }} existe dentro de testes-k6/src/"
-    continue-on-error: true
+    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: File check
+        continue-on-error: true
+        id: testfile
         run: |
           FILE="${{ inputs.test_name }}"
           if [ -f "$FILE" ]; then
@@ -27,9 +29,15 @@ jobs:
               echo "$FILE dont exists."
               exit 1
           fi
+
+      - name: The demo step has failed
+        if: ${{ failure() && steps.testfile.conclusion == 'failure' }}
+
+        
+          
   trigger:
     needs: [ test-file-check ]
-    if: ${{ failure() }}
+    if: false
     runs-on: ubuntu-latest
 
     steps:
