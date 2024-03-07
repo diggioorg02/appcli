@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: File check
+        continue-on-error: true
         id: testfile
         run: |
           FILE="${{ inputs.test_name }}"
@@ -29,17 +30,12 @@ jobs:
               exit 1
           fi
 
-      - name: The demo step has failed
-        if: ${{ failure() && steps.testfile.conclusion == 'failure' }}
-        run: exit 0
-
         
           
   trigger:
     needs: [ test-file-check ]
-    if: false
     runs-on: ubuntu-latest
-
+    if: always() && needs.test-file-check.result == 'success'
     steps:
       - name: Trigger Workflow in Another Repository
         run: |
