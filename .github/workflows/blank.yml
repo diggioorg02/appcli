@@ -4,21 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       test_name:
-        description: 'PATH do test ex: dir/test.js | *verificar se o arquivo existe na Branch'
+        description: 'PATH do test <dir/test.js> | *verificar se o arquivo existe na Branch'
         required: true
         type: string
       message:
         required: false
       Branch:
-        required: true
-        type: choice
-        options:
-        - "-"
-        - "SIM"
+        type: boolean
         description: Branch esta correta?
       Path:
         type: boolean
-        required: true
         description: O arquivo existe no PATH esta correta?
 
 jobs:
@@ -42,7 +37,7 @@ jobs:
           fi
      
       - name: "para a execução se a task acima falhar"
-        if: failure()
+        if: failure() $$ ${{ inputs.Branch == false }}
         run: |-
            curl \
              -X POST \
