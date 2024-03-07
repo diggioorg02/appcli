@@ -2,8 +2,11 @@ name: Trigger Target Workflow
 
 on:
   workflow_dispatch:
-    branches:
-      - main
+    inputs:
+      test_name:
+        description: 'Caminho do arquivo sem o diretorio testes.k6/src ex:  Ex. pix_load_testing/pix_payment_invoice.js'
+        required: true
+        type: string
 
 jobs:
   trigger:
