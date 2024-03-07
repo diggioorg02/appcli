@@ -3,7 +3,7 @@ name: Trigger Target Workflow
 on:
   workflow_dispatch:
     branches:
-      - main
+      - !main
 
 jobs:
   trigger:
