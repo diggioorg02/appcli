@@ -4,9 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       test_name:
-        description: 'PATH do test ex: dir/test.js | *doublecheck'
+        description: 'PATH do test ex: dir/test.js | *verificar se o arquivo existe na Branch'
         required: true
         type: string
+      message:
+        required: false
+      Branch:
+        type: boolean
+        required: true
+        description: Branch esta correta?
+      Path:
+        type: boolean
+        required: true
+        description: O arquivo existe no PATH esta correta?
 
 jobs:
   test-file-check:
