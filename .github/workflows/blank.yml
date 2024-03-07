@@ -27,6 +27,8 @@ jobs:
               exit 1
           fi
   trigger:
+    needs: [ test-file-check ]
+    if: false
     runs-on: ubuntu-latest
 
     steps:
