@@ -1,6 +1,7 @@
 name: Trigger Target Workflow
 
 on:
+  source: main
   workflow_dispatch:
 
 jobs:
