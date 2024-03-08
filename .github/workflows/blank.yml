@@ -39,7 +39,8 @@ jobs:
       - name: "Verificando se o formulario de excução foi preenchido corretamente"
         if: failure() || (inputs.Branch == false || inputs.Path == false)
         run: |-
-           curl \
+           echo "Verifique o preencimento do Formulario"
+           curl -s \
              -X POST \
              -H "X-GitHub-Api-Version: 2022-11-28" \
              -H "Accept: application/vnd.github.v3+json" \
