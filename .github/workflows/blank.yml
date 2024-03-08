@@ -39,6 +39,7 @@ jobs:
         env:
           RED: "\033[0;31m"
           NC: "\033[0m"
+        shell: bash
         run: |-
            echo "${RED}Verifique o preencimento do Formulario${NC}"
            curl -s \
