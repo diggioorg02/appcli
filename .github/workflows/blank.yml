@@ -16,7 +16,7 @@ on:
 
 jobs:
   test-file-check:
-    name: "${{ inputs.test_name }} testando se existe dentro de testes-k6/src/"
+    name: "Validações dos inputs do Formulario"
     
     runs-on: ubuntu-latest
     steps:
