@@ -37,7 +37,7 @@ jobs:
           fi
      
       - name: "para a execução se a task acima falhar"
-        if: failure() $$ ${{ inputs.Branch == false }}
+        if: failure() || (inputs.Branch == false || inputs.Path == false)
         run: |-
            curl \
              -X POST \
