@@ -16,7 +16,7 @@ on:
 
 jobs:
   test-file-check:
-    name: "Validações dos inputs do Formulario"
+    name: "Validações do Formulario"
     
     runs-on: ubuntu-latest
     steps:
@@ -49,6 +49,7 @@ jobs:
         
           
   trigger:
+    name: "Run K6 test"
     needs: [ test-file-check ]
     runs-on: ubuntu-latest
     if: always() && needs.test-file-check.result == 'success'
