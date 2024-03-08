@@ -7,8 +7,6 @@ on:
         description: 'PATH do test <dir/test.js> | *verificar se o arquivo existe na Branch'
         required: true
         type: string
-      message:
-        required: false
       Branch:
         type: boolean
         description: Branch esta correta?
