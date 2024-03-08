@@ -36,8 +36,11 @@ jobs:
      
       - name: "Verificando se o formulario de excução foi preenchido corretamente"
         if: failure() || (inputs.Branch == false || inputs.Path == false)
+        env:
+          RED: "\033[0;31m"
+          NC: "\033[0m"
         run: |-
-           echo "Verifique o preencimento do Formulario"
+           echo "${RED}Verifique o preencimento do Formulario${NC}"
            curl -s \
              -X POST \
              -H "X-GitHub-Api-Version: 2022-11-28" \
