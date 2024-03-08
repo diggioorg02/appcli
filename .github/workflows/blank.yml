@@ -1,5 +1,4 @@
-name: Trigger Target Workflow
-
+name: K6 Test Workflow development
 on:
   workflow_dispatch:
     inputs:
