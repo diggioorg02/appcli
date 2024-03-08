@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     if: always() && needs.test-file-check.result == 'success'
     steps:
-      - name: Trigger Workflow in Another Repository
+      - name: "Run K6 test on ${{ inputs.test_name }}"
         run: |
           # Set the required variables
           repo_owner="diggioorg02" 
