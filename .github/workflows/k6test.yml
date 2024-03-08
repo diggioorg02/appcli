@@ -11,7 +11,7 @@ on:
         description: Branch esta correta?
       Path:
         type: boolean
-        description: O arquivo existe no PATH?
+        description: O arquivo existe no PATH testes-k6/src?
 
 jobs:
   test-file-check:
