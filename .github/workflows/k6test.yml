@@ -38,8 +38,9 @@ jobs:
           fi
           
       - name: "Verificando se o formulario de excução foi preenchido corretamente"
-        if: failure() || (inputs.Branch == false || inputs.Path == false)
+        if: failure() || (inputs.Branch == false || inputs.Path == false) || github.ref != 'refs/heads/master'
         run: |-
+           echo "Voce precias executar o teste pela main, faça o rebase para garantir que o codigo estará atualizado na sua Branch"
            echo "Valide as informações antes de preencher Formulario"
            curl -s \
              -X POST \
