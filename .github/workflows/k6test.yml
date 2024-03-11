@@ -1,4 +1,4 @@
-name: K6 Test Workflow development
+name: K6 Test Workflow development (NOT USE)
 on:
   workflow_dispatch:
     inputs:
