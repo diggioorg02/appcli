@@ -12,6 +12,18 @@ on:
       Path:
         type: boolean
         description: O arquivo existe no PATH testes-k6/src?
+      environment:
+        description: "Test Environment"
+        required: true
+        default: "sandbox"
+        type: choice
+        options:
+          - "homolog"
+          - "sandbox"
+      extra_args:
+        description: "OPTIONAL: Extra args in test execution"
+        required: false
+        type: string
 
 jobs:
   test-file-check:
