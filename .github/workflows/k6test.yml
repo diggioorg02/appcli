@@ -12,16 +12,30 @@ on:
         type: boolean
         description: O arquivo existe no PATH testes-k6/src/ na MAIN?
       environment:
-        description: "Test Environment"
+        description: 'Test Environment'
         required: true
-        default: "sandbox"
+        default: 'sandbox'
         type: choice
         options:
-          - "homolog"
-          - "sandbox"
-      extra_args:
-        description: "OPTIONAL: Extra args in test execution"
-        required: false
+        - "homolog"
+        - "sandbox"
+      vus:
+        description: 'Virtual Users'
+        required: true
+        default: '10'
+        type: choice
+        options:
+        - "10"
+        - "40"
+        - "80"
+        - "100"
+        - "150"
+        - "160"
+        - "200"
+        - "300"
+      duration:
+        description: 'Duration in seconds'
+        required: true
         type: string
 
 jobs:
