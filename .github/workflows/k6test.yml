@@ -45,15 +45,17 @@ jobs:
               echo "$FILE exists."
               exit 0
           else
-              echo ""${{ inputs.test_name }} NÂO existe dentro do diretorio testes-k6/src/ na branch ${{ github.ref_name }}""
+              echo ""${{ inputs.test_name }} NÂO existe dentro do diretorio testes-k6/src/ na branch MAIN""
               exit 1
           fi
           
       - name: "Verificando se o formulario de excução foi preenchido corretamente"
         if: failure() || (inputs.Branch == false || inputs.Path == false) || github.ref != 'refs/heads/main'
         run: |-
-           echo "Voce precias executar o teste pela main, faça o rebase para garantir que o codigo estará atualizado na sua Branch"
+           echo "Voce precias executar o teste pela main, sua Branch ${{ github.ref_name }}"
+           echo "Crie um PR para a main e execute o teste pela main"
            echo "Valide as informações antes de preencher Formulario"
+           echo 'olhe a documentação https://github.com/dlpco/quality-assurance-backend/blob/feat/add_new_k6_readme/testes-k6/README.md'
            curl -s \
              -X POST \
              -H "X-GitHub-Api-Version: 2022-11-28" \
