@@ -55,7 +55,7 @@ jobs:
            echo "Voce precias executar o teste pela main, sua Branch ${{ github.ref_name }}"
            echo "Crie um PR para a main e execute o teste pela main"
            echo "Valide as informações antes de preencher Formulario"
-           echo 'olhe a documentação https://github.com/dlpco/quality-assurance-backend/blob/feat/add_new_k6_readme/testes-k6/README.md'
+           echo 'olhe a documentação https://github.com/dlpco/quality-assurance-backend/blob/main/testes-k6/README.md'
            curl -s \
              -X POST \
              -H "X-GitHub-Api-Version: 2022-11-28" \
