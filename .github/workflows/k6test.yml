@@ -3,15 +3,14 @@ on:
   workflow_dispatch:
     inputs:
       test_name:
-        description: 'SUB-PATH do test <dir/test.js> | *verificar se o arquivo existe na Branch'
-        required: true
+        description: 'SUB-PATH do test <dir/test.js>'
         type: string
       Branch:
         type: boolean
         description: Branch é a MAIN?
       Path:
         type: boolean
-        description: O arquivo existe no PATH testes-k6/src na MAIN?
+        description: O arquivo existe no PATH testes-k6/src/ na MAIN?
       environment:
         description: "Test Environment"
         required: true
