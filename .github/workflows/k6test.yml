@@ -2,17 +2,17 @@ name: K6 Test Workflow development (NOT USE)
 on:
   workflow_dispatch:
     inputs:
-      test_name:
-        description: 'SUB-PATH do test <dir/test.js>'
-        type: string
       Branch:
         type: boolean
         description: Branch é a MAIN?
       Path:
         type: boolean
         description: O arquivo existe no PATH testes-k6/src/ na MAIN?
+      test_name:
+        description: 'SUB-PATH do test <dir/test.js>'
+        type: string
       environment:
-        description: 'Test Environment'
+        description: 'Ambiente'
         required: true
         default: 'sandbox'
         type: choice
@@ -20,7 +20,7 @@ on:
         - "homolog"
         - "sandbox"
       vus:
-        description: 'Virtual Users'
+        description: 'VUs'
         required: true
         default: '10'
         type: choice
@@ -34,7 +34,7 @@ on:
         - "200"
         - "300"
       duration:
-        description: 'Duration in seconds'
+        description: 'Duração'
         required: true
         type: string
 
